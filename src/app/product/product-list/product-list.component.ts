@@ -1,5 +1,5 @@
+import { IProduct } from './../product';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -10,10 +10,10 @@ export class ProductListComponent implements OnInit {
   imageWidth: number = 50;
   imageMargin: number = 2;
   showImage: boolean = false;
-  filterProduct: string = 'Cat';
+  listFilter: string = 'Cat';
 
   //declared product array with any
-  private products: any[] = [
+   products: IProduct[] = [
     {
       "productId": 2,
       "productName": "Garden Cart",
