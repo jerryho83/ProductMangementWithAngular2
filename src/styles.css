@@ -39,7 +39,10 @@
 }
 .bg-green{
 	background-color:#4CAF50 !important;
-	}
+    }
+.bg-yellow{
+    background-color:blue !important;
+}
 .price li {
     border-bottom: 1px solid #eee;
     padding: 20px;
@@ -59,4 +62,7 @@
     text-align: center;
     text-decoration: none;
     font-size: 18px;
+}
+a:hover{
+    text-decoration: none !important;
 }
