@@ -13,7 +13,7 @@ export class ProductListComponent implements OnInit {
   listFilter: string = 'Cat';
 
   //declared product array with any
-   products: IProduct[] = [
+  products: IProduct[] = [
     {
       "productId": 2,
       "productName": "Garden Cart",
@@ -35,7 +35,7 @@ export class ProductListComponent implements OnInit {
       "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
     }
   ];
- toggleImage(): void {
+  toggleImage(): void {
     this.showImage = !this.showImage;
   }
   constructor() { }
@@ -43,5 +43,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     console.log(this.products);
   }
- 
+  onRatingClicked(message: string): void {
+    this.title = 'Product List: ' + message;
+  }
 }
