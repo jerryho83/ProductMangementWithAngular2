@@ -1,3 +1,4 @@
+import { ProductService } from './../../services/product.service';
 import { IProduct } from './../product';
 import { Component, OnInit } from '@angular/core';
 @Component({
@@ -11,7 +12,8 @@ export class ProductListComponent implements OnInit {
   imageMargin: number = 2;
   showImage: boolean = false;
   listFilter: string = 'Cat';
-
+   errorMessage: string;
+ 
   //declared product array with any
   products: IProduct[] = [
     {
@@ -38,10 +40,10 @@ export class ProductListComponent implements OnInit {
   toggleImage(): void {
     this.showImage = !this.showImage;
   }
-  constructor() { }
+  constructor(private productService:ProductService) { }
 
   ngOnInit() {
-    console.log(this.products);
+    this.productService.getProducts().subscribe(products=>this.products=products);
   }
   onRatingClicked(message: string): void {
     this.title = 'Product List: ' + message;
